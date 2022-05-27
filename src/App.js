@@ -29,8 +29,8 @@ export default function App() {
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
-        setContainer(response.data);
+        console.log(response.data.data);
+        setContainer(response.data.data);
       })
       .catch(function (error) {
         console.error(error);
@@ -61,7 +61,7 @@ export default function App() {
       {container.map((item) => {
         return (
           <div>
-            <h1>{item.data}</h1>
+            <h1>{item.message}</h1>
           </div>
         );
       })}
